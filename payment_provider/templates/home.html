@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="container my-5">
+        <div class="card mb-3">
+            <div class="card-header bg-primary text-white">
+                <h3 class="card-title">User Information</h3>
+            </div>
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><strong>User name：</strong>{{ user.username }}</li>
+                    <li class="list-group-item"><strong>Real name：</strong>{{ user.name }}</li>
+                    <li class="list-group-item"><strong>ID number：</strong>{{ user.username }}</li>
+                    <li class="list-group-item"><strong>Email：</strong>{{ user.user_email }}</li>
+                    <li class="list-group-item"><strong>Phone number：</strong>{{ user.user_phone }}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header bg-success text-white">
+                <h3 class="card-title">Current Balance</h3>
+            </div>
+            <div class="card-body">
+                <h1 class="display-4">{{ user.balance }}￥</h1>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,18 @@
+<!-- templates/pay.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container my-5">
+        <h1 class="mb-4">Pay Invoice</h1>
+        {% if error %}
+            <div class="alert alert-danger">{{ error }}</div>
+        {% endif %}
+        {% if payment_url %}
+            <hr>
+            <p>Please click on the following link to open the payment page in your browser and complete the payment:</p>
+            <a href="{{ payment_url }}" target="_blank">{{ payment_url }}</a>
+            <p class="mt-3">Pay Amount：￥{{ amount }}</p>
+        {% endif %}
+    </div>
+{% endblock %}

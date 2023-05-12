@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="center-box">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-5">
+
+                    <form method="POST" class="login-form">
+                        {% csrf_token %}
+                        {% csrf_token %}
+                        <h1 class="text-center mb-4">Sign up an account</h1>
+
+                        {% if error %}
+                            <div class="alert alert-danger">{{ error }}</div>
+                        {% endif %}
+
+                        <div class="mb-3">
+                            <label for="username" class="form-label">User Name</label>
+                            <input type="text" name="username" id="username" class="form-control"
+                                   placeholder="Please enter user name" required autofocus>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Real Name</label>
+                            <input type="text" name="name" id="name" class="form-control" placeholder="Please enter real name"
+                                   required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="user_phone" class="form-label">Phone Number</label>
+                            <input type="text" name="user_phone" id="user_phone" class="form-control"
+                                   placeholder="Please enter phone number" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="user_email" class="form-label">Email</label>
+                            <input type="email" name="user_email" id="user_email" class="form-control"
+                                   placeholder="Please enter email address" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="user_id_number" class="form-label">ID Number</label>
+                            <input type="text" name="user_id_number" id="user_id_number" class="form-control"
+                                   placeholder="Please enter ID Number" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" name="password" id="password" class="form-control"
+                                   placeholder="Please enter password" required>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
